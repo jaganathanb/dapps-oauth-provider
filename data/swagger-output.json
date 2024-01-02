@@ -1,0 +1,87 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "DApps OAuth provider API documentation",
+    "version": "0.0.1",
+    "license": {
+      "name": "MIT",
+      "url": "https://github.com/jaganathanb/dapps-oathu-provider/blob/master/LICENSE"
+    },
+    "description": ""
+  },
+  "servers": [
+    {
+      "url": "http://localhost:7770/api/v1"
+    },
+    {
+      "url": "https://localhost:7770/api/v1"
+    }
+  ],
+  "paths": {
+    "/docs": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/authorize": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authenticateHandler",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/token": {
+      "post": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/authenticate": {
+      "get": {
+        "description": "",
+        "responses": {
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "apiKeyAuth": {
+        "type": "Bearer",
+        "in": "header",
+        "name": "Authoriation",
+        "description": "Add jwt token here"
+      }
+    }
+  }
+}
